@@ -4,6 +4,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: grid;
+    grid-template-columns: ;
+    grid-template-rows: ;
 }
 
 h1 {
@@ -14,8 +17,17 @@ h1 {
 header {
     font-family: 'Rubik Maps', sans-serif;
     font-size: x-large;
+    display: ;
+    grid-column-start: ;
+    grid-column-end: ;
+    grid-row-start: ;
 }
 
 button {
     background-color: lightgray;
+}
+
+sidebar {
+    grid-column-start: ;
+    grid-row-start: ;
 }

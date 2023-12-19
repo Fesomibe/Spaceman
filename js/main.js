@@ -13,6 +13,7 @@ const guessEl = document.querySelector('footer');
 const spacemanEl = document.getElementById('spaceman');
 
 /*----- event listeners -----*/
+document.getElementById('container').addEventListener('click', handleGuess);
 
 /*----- functions -----*/
 init();
@@ -24,6 +25,11 @@ function init() {
   incorrectGuesses = [];
 
   render();
+}
+
+function handleGuess (evt) {
+    const letter = evt.target.innerText;
+    if (letter.length !== 1) return;
 }
 
 function render () {

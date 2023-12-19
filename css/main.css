@@ -4,30 +4,69 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: grid;
-    grid-template-columns: ;
-    grid-template-rows: ;
+    display: flex;
+    justify-content: center;
+    /* grid-template-columns: ;
+    grid-template-rows: ; */
 }
 
 h1 {
     font-family: 'Rubik Doodle Shadow', sans-serif;
     font-size: large;
+    display: flex;
+    justify-content: center;
 }
 
 header {
     font-family: 'Rubik Maps', sans-serif;
     font-size: x-large;
-    display: ;
-    grid-column-start: ;
+    display: flex;
+    justify-content: center;
+    /* grid-column-start: ;
     grid-column-end: ;
-    grid-row-start: ;
+    grid-row-start: ; */
 }
 
 button {
     background-color: lightgray;
 }
 
-sidebar {
+#spaceman {
+    width: 504px;
+    height: 687px;
+    margin: 10vmin;
+    background-image: url("../imgs/spaceman.jpg");
+    background-position-x: 0;
+  }
+
+footer {
+    font-size: 8vmin;
+    letter-spacing: 1.5vmin;
+}
+
+/* aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+aside > button {
+    margin: .25;
+    height: 2rem;
+    width: 2rem;
+}
+
+footer {
     grid-column-start: ;
     grid-row-start: ;
+    justify-self: ;
+    align-self: center;
+    letter-spacing: ;
+    font-size: 3rem;
 }
+
+section {
+    grid-column: ;
+} */

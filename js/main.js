@@ -1,15 +1,16 @@
 /*----- constants -----*/
+const SPRITE_WIDTH = 504;
 const MAX_ATTEMPTS = 7;
 const WORDS = ['SPACE', 'PLANET', 'MAN'];
 
 /*----- state variables -----*/
-let secret_word;
-let guessed_word;
-let incorrect_guesses; // array to hold incorrect letters
+let secretWord;
+let guessedWord;
+let incorrectGuesses; // array to hold incorrect letters
 
 /*----- cached elements  -----*/
-
-
+const guessEl = document.querySelector('footer');
+const spacemanEl = document.getElementById('spaceman');
 
 /*----- event listeners -----*/
 
@@ -18,12 +19,14 @@ init();
 
 function init() {
   const rndIdx = Math.floor(Math.random() * WORDS.length);
-  secret_word = WORDS[rndIdx];
-  guessed_word = '_'.repeat(secret_word.length);
-  incorrect_guesses = [];
+  secretWord = WORDS[rndIdx];
+  guessedWord = '_'.repeat(secretWord.length);
+  incorrectGuesses = [];
+
   render();
 }
 
 function render () {
-
+    guessEl.innerText = guessedWord;
+    spacemanEl.style.backgroundPosition = `-${SPRITE_WIDTH * (6 - incorrectGuesses.length)}px`;
 }

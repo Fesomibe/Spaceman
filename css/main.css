@@ -6,6 +6,8 @@ body {
     align-items: center;
     display: flex;
     justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
     /* grid-template-columns: ;
     grid-template-rows: ; */
 }
@@ -48,6 +50,7 @@ footer {
 #msg {
     font-size: 1.5rem;
     letter-spacing: 2px;
+    font-weight: 700;
 }
 
 /* aside {

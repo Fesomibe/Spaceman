@@ -27,12 +27,29 @@ function init() {
   render();
 }
 
-function handleGuess (evt) {
+// In response to user interaction, update all impacted state, then call render
+function handleGuess(evt) {
     const letter = evt.target.innerText;
+    // guards
     if (letter.length !== 1) return;
+    if (secretWord.includes(letter)) {
+      
+// Correct guess - update guessWord
+      let newGuess = '';
+      for (let i = 0; i < secretWord.length; i++) {
+        newGuess += secretWord.charAt(i) === letter ? letter : guessedWord.charAt(i);
+      }
+      guessedWord = newGuess;
+    } else {
+
+// Incorrect guess - update incorrectGuesses
+      incorrectGuesses.push(letter);
+    }
+  render();
 }
 
-function render () {
+function render() {
     guessEl.innerText = guessedWord;
     spacemanEl.style.backgroundPosition = `-${SPRITE_WIDTH * (6 - incorrectGuesses.length)}px`;
 }
+

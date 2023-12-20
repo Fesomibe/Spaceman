@@ -38,8 +38,9 @@ button {
     width: 504px;
     height: 687px;
     margin: 10vmin;
-    background-image: url("../imgs/spaceman.jpg");
+    background-image: url("../imgs/spaceman.png");
     background-position-x: 0;
+    background-size: cover;
   }
 
 footer {

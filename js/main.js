@@ -1,19 +1,28 @@
 /*----- constants -----*/
 const SPRITE_WIDTH = 504;
-const MAX_ATTEMPTS = 7;
-const WORDS = ['SPACE', 'PLANET', 'MAN'];
+const MAX_ATTEMPTS = 6;
+const WORDS = ['SPACE', 'PLANET', 'MAN', 'MOON', 'JUPITER', 'STAR', 'PLUTO', 'URANUS', 'SCHOOL', 'FRANK','UNIVERSE'];
+const MSG_LOOKUP = {
+  null: '',
+  'W': 'Good Job!',
+  'L': 'Try Again',
+}
 
 /*----- state variables -----*/
 let secretWord;
 let guessedWord;
 let incorrectGuesses; // array to hold incorrect letters
+let winner;
+let remainingAttempts;
 
 /*----- cached elements  -----*/
 const guessEl = document.querySelector('footer');
 const spacemanEl = document.getElementById('spaceman');
+const msgEl = document.getElementById('msg');
 
 /*----- event listeners -----*/
 document.getElementById('container').addEventListener('click', handleGuess);
+document.getElementById('playbtn').addEventListener('click', init);
 
 /*----- functions -----*/
 init();
@@ -23,7 +32,8 @@ function init() {
   secretWord = WORDS[rndIdx];
   guessedWord = '_'.repeat(secretWord.length);
   incorrectGuesses = [];
-
+  remainingAttempts = parseInt(MAX_ATTEMPTS);
+  winner = null;
   render();
 }
 
@@ -33,6 +43,12 @@ function handleGuess(evt) {
     // guards
     if (letter.length !== 1) return;
     if (secretWord.includes(letter)) {
+
+function updateMessage(message) {
+    if (msgSectionEl) {
+      msgSectionEl.textContent = message;
+}
+  }
       
 // Correct guess - update guessWord
       let newGuess = '';
@@ -44,12 +60,29 @@ function handleGuess(evt) {
 
 // Incorrect guess - update incorrectGuesses
       incorrectGuesses.push(letter);
+      remainingAttempts--;
     }
+  getWinner();
   render();
+}
+
+function getWinner() {
+  if (guessedWord === secretWord) {
+    winner = 'W';
+  } else if(guessedWord !== secretWord && remainingAttempts > 0) {
+    winner = null;
+  } else {
+    winner = 'L';
+  }
+}
+
+function renderMessage() {
+  msgEl.innerHTML = MSG_LOOKUP[winner];
+  msgEl.style.visibility = winner === null ? 'hidden' : 'visible';
 }
 
 function render() {
     guessEl.innerText = guessedWord;
     spacemanEl.style.backgroundPosition = `-${SPRITE_WIDTH * (6 - incorrectGuesses.length)}px`;
+    renderMessage();
 }
-

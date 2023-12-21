@@ -23,16 +23,15 @@ header {
     font-size: x-large;
     display: flex;
     justify-content: center;
-    /* grid-column-start: ;
-    grid-column-end: ;
-    grid-row-start: ; */
+    margin: 20px;
+    font-size: 32px;
 }
 
 button {
     background-color: lightgray;
 }
 
-#container > button {
+#container>button {
     font-size: 22px;
     font-family: 'Courier New', Courier, monospace;
     margin: 4px;
@@ -47,37 +46,39 @@ button {
 #spaceman {
     width: 162px;
     height: 220px;
-    /* width: 504px;
-    height: 687px; */
-    margin: 10vmin;
+    margin: 50px;
     background-image: url("../imgs/spaceman.png");
     background-position-x: 0;
     background-size: cover;
     transform: rotate(-.04Turn);
-  animation-name: spacefloat;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+    animation-name: spacefloat;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes spacefloat {
     0% {
-      transform: translate(0,  0px) rotate(0);
+        transform: translate(0, 0px) rotate(0);
     }
-    25%  {
-      transform: translate(0, 15px) rotate(3Deg);
+
+    25% {
+        transform: translate(0, 15px) rotate(3Deg);
     }
-    50%  {
-      transform: translate(0, 5px) rotate(0);
+
+    50% {
+        transform: translate(0, 5px) rotate(0);
     }
-    75%  {
-      transform: translate(0, 15px) rotate(-2Deg);
+
+    75% {
+        transform: translate(0, 15px) rotate(-2Deg);
     }
-    100%   {
-      transform: translate(0, 0) rotate(0Deg);
-    } 
+
+    100% {
+        transform: translate(0, 0) rotate(0Deg);
+    }
 }
-  
+
 
 footer {
     font-size: 8vmin;
@@ -96,6 +97,10 @@ footer {
 
 #playbtn {
     background-color: aqua;
+    margin-top: 40px;
+    font-size: 24px;
+    padding: 6px 10px;
+    border-radius: 20px;
 }
 
 main {
@@ -109,6 +114,7 @@ main {
     display: flex;
     flex-wrap: wrap;
 }
+
 /* aside {
     display: flex;
     justify-content: center;
@@ -135,4 +141,5 @@ main {
 
 section {
     grid-column: ;
-} */ */
+} */
+*/

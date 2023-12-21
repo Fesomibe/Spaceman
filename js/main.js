@@ -1,11 +1,11 @@
 /*----- constants -----*/
 const SPRITE_WIDTH = 504;
 const MAX_ATTEMPTS = 6;
-const WORDS = ['SPACE', 'PLANET', 'MAN', 'MOON', 'JUPITER', 'STAR', 'PLUTO', 'URANUS', 'SCHOOL', 'FRANK','UNIVERSE'];
+const WORDS = ['SPACE', 'PLANET', 'MANNER', 'MOON', 'JUPITER', 'STAR', 'PLUTO', 'URANUS', 'SCHOOL', 'FRANK','UNIVERSE', 'CENTURY', 'EARTH'];
 const MSG_LOOKUP = {
   null: '',
-  'W': 'Good Job!',
-  'L': 'Try Again',
+  'W': 'You got it! Good Job!',
+  'L': 'Oh No, Try Again!',
 }
 
 /*----- state variables -----*/
@@ -45,8 +45,8 @@ function handleGuess(evt) {
     if (secretWord.includes(letter)) {
 
 function updateMessage(message) {
-    if (msgSectionEl) {
-      msgSectionEl.textContent = message;
+    if (msgEl) {
+      msgEl.textContent = message;
 }
   }
       

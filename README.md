@@ -1,5 +1,5 @@
 # Spaceman🚀 
-Enjoy this game of Spaceman! Protect the Spaceman from disappearing by guessing the correct word or risk CRASHING!!! .
+Enjoy this game of Spaceman! Protect the Spaceman from disappearing by guessing the correct word or risk CRASHING!!!.
 
 # Screenshot
 

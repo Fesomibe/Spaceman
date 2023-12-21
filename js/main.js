@@ -1,5 +1,5 @@
 /*----- constants -----*/
-const SPRITE_WIDTH = 504;
+const SPRITE_WIDTH = 162;
 const MAX_ATTEMPTS = 6;
 const WORDS = ['SPACE', 'PLANET', 'MANNER', 'MOON', 'JUPITER', 'STAR', 'PLUTO', 'URANUS', 'SCHOOL', 'FRANK','UNIVERSE', 'CENTURY', 'EARTH'];
 const MSG_LOOKUP = {
@@ -86,3 +86,11 @@ function render() {
     spacemanEl.style.backgroundPosition = `-${SPRITE_WIDTH * (6 - incorrectGuesses.length)}px`;
     renderMessage();
 }
+
+let play = document.getElementById("startbtn");
+    function playMusic() {
+      let audio = new Audio("imgs/spaceSound.mp3");
+      // background sound length: 3s;
+      audio.play()
+    }
+    play.addEventListener("click", playMusic);

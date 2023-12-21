@@ -8,8 +8,6 @@ body {
     justify-content: center;
     font-family: 'Courier New', Courier, monospace;
     color: aliceblue;
-    /* grid-template-columns: ;
-    grid-template-rows: ; */
 }
 
 h1 {
@@ -34,14 +32,52 @@ button {
     background-color: lightgray;
 }
 
+#container > button {
+    font-size: 22px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 4px;
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #spaceman {
-    width: 504px;
-    height: 687px;
+    width: 162px;
+    height: 220px;
+    /* width: 504px;
+    height: 687px; */
     margin: 10vmin;
     background-image: url("../imgs/spaceman.png");
     background-position-x: 0;
     background-size: cover;
-  }
+    transform: rotate(-.04Turn);
+  animation-name: spacefloat;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes spacefloat {
+    0% {
+      transform: translate(0,  0px) rotate(0);
+    }
+    25%  {
+      transform: translate(0, 15px) rotate(3Deg);
+    }
+    50%  {
+      transform: translate(0, 5px) rotate(0);
+    }
+    75%  {
+      transform: translate(0, 15px) rotate(-2Deg);
+    }
+    100%   {
+      transform: translate(0, 0) rotate(0Deg);
+    } 
+}
+  
 
 footer {
     font-size: 8vmin;
@@ -54,6 +90,25 @@ footer {
     font-weight: 700;
 }
 
+#startbtn {
+    background-color: aqua;
+}
+
+#playbtn {
+    background-color: aqua;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
 /* aside {
     display: flex;
     justify-content: center;
@@ -62,14 +117,15 @@ footer {
     align-content: center;
 }
 
-aside > button {
+/* aside > button {
     margin: .25;
     height: 2rem;
     width: 2rem;
-}
+} */
 
-footer {
-    grid-column-start: ;
+/* footer {
+    grid-column-start: auto;
+    grid-row-start: 
     grid-row-start: ;
     justify-self: ;
     align-self: center;
@@ -79,4 +135,4 @@ footer {
 
 section {
     grid-column: ;
-} */
+} */ */

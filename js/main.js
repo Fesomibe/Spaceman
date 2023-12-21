@@ -1,7 +1,7 @@
 /*----- constants -----*/
 const SPRITE_WIDTH = 162;
 const MAX_ATTEMPTS = 6;
-const WORDS = ['SPACE', 'PLANET', 'MANNER', 'MOON', 'JUPITER', 'STAR', 'PLUTO', 'URANUS', 'SCHOOL', 'FRANK','UNIVERSE', 'CENTURY', 'EARTH'];
+const WORDS = ['SPACE', 'PLANET', 'MANNER', 'MOON', 'JUPITER', 'STAR', 'PLUTO', 'URANUS', 'SCHOOL', 'FRANK', 'UNIVERSE', 'CENTURY', 'EARTH'];
 const MSG_LOOKUP = {
   null: '',
   'W': 'You got it!👏🏻 Good Job!',
@@ -19,6 +19,7 @@ let remainingAttempts;
 const guessEl = document.querySelector('footer');
 const spacemanEl = document.getElementById('spaceman');
 const msgEl = document.getElementById('msg');
+const letterBtns = document.querySelectorAll('#container > button');
 
 /*----- event listeners -----*/
 document.getElementById('container').addEventListener('click', handleGuess);
@@ -39,29 +40,29 @@ function init() {
 
 // In response to user interaction, update all impacted state, then call render
 function handleGuess(evt) {
-    const letter = evt.target.innerText;
-    // guards
-    if (letter.length !== 1) return;
-    if (secretWord.includes(letter)) {
+  const letter = evt.target.innerText;
+  // guards
+  if (letter.length !== 1) return;
+  if (secretWord.includes(letter)) {
 
-function updateMessage(message) {
-    if (msgEl) {
-      msgEl.textContent = message;
-}
-  }
-      
-// Correct guess - update guessWord
-      let newGuess = '';
-      for (let i = 0; i < secretWord.length; i++) {
-        newGuess += secretWord.charAt(i) === letter ? letter : guessedWord.charAt(i);
+    function updateMessage(message) {
+      if (msgEl) {
+        msgEl.textContent = message;
       }
-      guessedWord = newGuess;
-    } else {
-
-// Incorrect guess - update incorrectGuesses
-      incorrectGuesses.push(letter);
-      remainingAttempts--;
     }
+
+    // Correct guess - update guessWord
+    let newGuess = '';
+    for (let i = 0; i < secretWord.length; i++) {
+      newGuess += secretWord.charAt(i) === letter ? letter : guessedWord.charAt(i);
+    }
+    guessedWord = newGuess;
+  } else {
+
+    // Incorrect guess - update incorrectGuesses
+    incorrectGuesses.push(letter);
+    remainingAttempts--;
+  }
   getWinner();
   render();
 }
@@ -69,7 +70,7 @@ function updateMessage(message) {
 function getWinner() {
   if (guessedWord === secretWord) {
     winner = 'W';
-  } else if(guessedWord !== secretWord && remainingAttempts > 0) {
+  } else if (guessedWord !== secretWord && remainingAttempts > 0) {
     winner = null;
   } else {
     winner = 'L';
@@ -82,15 +83,27 @@ function renderMessage() {
 }
 
 function render() {
-    guessEl.innerText = guessedWord;
-    spacemanEl.style.backgroundPosition = `-${SPRITE_WIDTH * (6 - incorrectGuesses.length)}px`;
-    renderMessage();
+  guessEl.innerText = guessedWord;
+  spacemanEl.style.backgroundPosition = `-${SPRITE_WIDTH * (6 - incorrectGuesses.length)}px`;
+  renderMessage();
+  renderLetterBtns();
 }
 
-let play = document.getElementById("startbtn");
-    function playMusic() {
-      let audio = new Audio("imgs/spaceSound.mp3");
-      // background sound length: 3s;
-      audio.play()
+function renderLetterBtns() {
+  letterBtns.forEach(function(btn) {
+    const letter = btn.innerText;
+    if (guessedWord.includes(letter) || incorrectGuesses.includes(letter)) {
+      btn.style.visibility = 'hidden';
+    } else {
+      btn.style.visibility = 'visible';
     }
-    play.addEventListener("click", playMusic);
+  });
+}
+
+// let play = document.getElementById("startbtn");
+//     function playMusic() {
+//       let audio = new Audio("imgs/spaceSound.mp3");
+//       // background sound length: 3s;
+//       audio.play()
+//     }
+//     play.addEventListener("click", playMusic);

@@ -1,10 +1,10 @@
-# Spaceman
-A description of your game. Background info of the game is a nice touch.
+# Spaceman🚀 
+Enjoy this game of Spaceman! Protect the Spaceman from disappearing by guessing the correct word or risk CRASHING!!! .
 
 # Screenshot
 
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
+<img src="./imgs/Screenshot - Imgur.png">
+<img src="https://imgur.com/OOtERuC">
 
 # Technologies Used
 
@@ -15,7 +15,7 @@ A description of your game. Background info of the game is a nice touch.
 # Getting Started
 
 [Click to View Project Planning](your Trello url here)
-[Click to Play Connect Four!](your deployment url here)
+[Click to Play Spaceman!](https://fesomibe.github.io/Spaceman/)
 
 # Next Steps
 

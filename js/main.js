@@ -4,8 +4,8 @@ const MAX_ATTEMPTS = 6;
 const WORDS = ['SPACE', 'PLANET', 'MANNER', 'MOON', 'JUPITER', 'STAR', 'PLUTO', 'URANUS', 'SCHOOL', 'FRANK','UNIVERSE', 'CENTURY', 'EARTH'];
 const MSG_LOOKUP = {
   null: '',
-  'W': 'You got it! Good Job!',
-  'L': 'Oh No, Try Again!',
+  'W': 'You got it!👏🏻 Good Job!',
+  'L': 'Oh No!😱 Try Again!',
 }
 
 /*----- state variables -----*/

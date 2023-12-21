@@ -2,10 +2,14 @@
 const SPRITE_WIDTH = 162;
 const MAX_ATTEMPTS = 6;
 const WORDS = ['SPACE', 'PLANET', 'MANNER', 'MOON', 'JUPITER', 'STAR', 'PLUTO', 'URANUS', 'SCHOOL', 'FRANK', 'UNIVERSE', 'CENTURY', 'EARTH'];
+const SOUNDS = {
+  correct: 'audio/correct.mp3',
+  wrong: 'audio/wrong.mp3',
+};
 const MSG_LOOKUP = {
   'W': 'You got it!👏🏻 Good Job!',
   'L': 'Oh No!😱 Try Again!',
-}
+};
 
 /*----- state variables -----*/
 let secretWord;
@@ -19,6 +23,7 @@ const spacemanEl = document.getElementById('spaceman');
 const msgEl = document.getElementById('msg');
 const letterBtns = document.querySelectorAll('#container > button');
 const playBtn = document.getElementById('playbtn');
+const player = new Audio();
 
 /*----- event listeners -----*/
 document.getElementById('container').addEventListener('click', handleGuess);
@@ -48,9 +53,11 @@ function handleGuess(evt) {
       newGuess += secretWord.charAt(i) === letter ? letter : guessedWord.charAt(i);
     }
     guessedWord = newGuess;
+    playSound('correct');
   } else {
     // Incorrect guess - update incorrectGuesses
     incorrectGuesses.push(letter);
+    playSound('wrong');
   }
   getWinner();
   render();
@@ -93,10 +100,7 @@ function renderLetterBtns() {
   });
 }
 
-// let play = document.getElementById("startbtn");
-// function playMusic() {
-//   let audio = new Audio("imgs/spaceSound.mp3");
-//   // background sound length: 3s;
-//   audio.play()
-// }
-// play.addEventListener("click", playMusic);
+function playSound(sound) {
+  player.src = SOUNDS[sound];
+  player.play();
+}

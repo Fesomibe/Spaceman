@@ -12,7 +12,7 @@ body {
 
 h1 {
     font-family: 'Rubik Doodle Shadow', sans-serif;
-    font-size: large;
+    font-size: 26px;
     display: flex;
     justify-content: center;
     letter-spacing: 2px;
@@ -24,7 +24,7 @@ header {
     display: flex;
     justify-content: center;
     margin: 20px;
-    font-size: 32px;
+    font-size: 40px;
 }
 
 button {
@@ -83,24 +83,21 @@ button {
 footer {
     font-size: 8vmin;
     letter-spacing: 1.5vmin;
+    font-weight: bolder;
 }
 
 #msg {
-    font-size: 1.5rem;
+    font-size: 26px;
     letter-spacing: 2px;
     font-weight: 700;
-}
-
-#startbtn {
-    background-color: aqua;
 }
 
 #playbtn {
     background-color: aqua;
     margin-top: 40px;
-    font-size: 24px;
-    padding: 6px 10px;
-    border-radius: 20px;
+    font-size: 20px;
+    padding: 4px 8px;
+    border-radius: 16px;
 }
 
 main {

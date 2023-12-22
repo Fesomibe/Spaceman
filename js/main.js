@@ -5,6 +5,8 @@ const WORDS = ['SPACE', 'PLANET', 'MANNER', 'MOON', 'JUPITER', 'STAR', 'PLUTO', 
 const SOUNDS = {
   correct: 'audio/correct.mp3',
   wrong: 'audio/wrong.mp3',
+  win: 'audio/win.mp3',
+  lose: 'audio/lose.mp3',
 };
 const MSG_LOOKUP = {
   'W': 'You got it!👏🏻 Good Job!',
@@ -66,8 +68,14 @@ function handleGuess(evt) {
 function getWinner() {
   if (guessedWord === secretWord) {
     winner = 'W';
+    setTimeout(function() {
+      playSound('win');
+    }, 500);
   } else if (incorrectGuesses.length === MAX_ATTEMPTS) {
     winner = 'L';
+    setTimeout(function() {
+      playSound('lose');
+    }, 500);
   } else {
     winner = null;
   }

@@ -1,10 +1,10 @@
-# Spaceman🚀 
-Enjoy this game of Spaceman! Protect the Spaceman from disappearing by guessing the correct word or risk CRASHING!!!.
+# <Spaceman🚀>
+Enjoy this game of Spaceman! Protect the Spaceman from disappearing by guessing the correct word or risk CRASHING!!!..
 
 # Screenshot
 
-<img src="./imgs/Screenshot - Imgur.png">
-<img src="https://imgur.com/OOtERuC">
+<img src="https://imgur.com/2JiqAgz">
+<img src="./imgs/Screenshot 2.png">
 
 # Technologies Used
 

@@ -111,32 +111,3 @@ main {
     display: flex;
     flex-wrap: wrap;
 }
-
-/* aside {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
-}
-
-/* aside > button {
-    margin: .25;
-    height: 2rem;
-    width: 2rem;
-} */
-
-/* footer {
-    grid-column-start: auto;
-    grid-row-start: 
-    grid-row-start: ;
-    justify-self: ;
-    align-self: center;
-    letter-spacing: ;
-    font-size: 3rem;
-}
-
-section {
-    grid-column: ;
-} */
-*/
